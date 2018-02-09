@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>express nodejs</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/videojs/video-js.min.css">
+</head>
+<body>
+<div id="library">
+    <h1>My video lib</h1>
+    <div class="container">
+        <div class="row">
+            <input class="col-md-12" type="text" placeholder="search">
+        </div>
+        <div class="row">
+            <% videos.forEach(function(video, index) { %>
+            <div class="col-md-4 col-sm-4">
+                <h3><%= video %></h3>
+                <video class="video-js vjs-default-skin vjs-16-9 vjs-big-play-centered" controls
+                       preload="auto" width="640" height="264" poster="/public/video-poster.png"
+                       data-setup="{}">
+                    <source src="/video/<%= video %>" type='video/mp4'>
+                </video>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/videojs/video.min.js"></script>
+</body>
+</html>
+
